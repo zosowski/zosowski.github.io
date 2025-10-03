@@ -124,6 +124,7 @@ footer {
 body.notion {
   background-color: #191919;
   color: #e3e5e5;
+  padding-top: 72px;
 }
 
 .notion .top-nav {
@@ -133,8 +134,8 @@ body.notion {
 
 .notion-container {
   max-width: 920px;
-  margin: 120px auto 96px;
-  padding: 0 32px 32px;
+  margin: 0 auto 96px;
+  padding: 32px 32px;
 }
 
 .notion-page-title {
@@ -215,9 +216,13 @@ body.notion {
     font-size: 0.9rem;
   }
 
+  body.notion {
+    padding-top: 64px;
+  }
+
   .notion-container {
-    margin: 108px auto 64px;
-    padding: 0 20px 24px;
+    margin: 0 auto 64px;
+    padding: 24px 20px;
   }
 
   .notion-page-title {
