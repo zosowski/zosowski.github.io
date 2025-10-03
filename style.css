@@ -115,9 +115,20 @@ footer {
   gap: 40px;
 }
 
-.icons img {
+.icons a,
+.icons .icon-wrapper {
   width: 60px;
-  height: auto;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* Notion-style content pages */
