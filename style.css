@@ -1,0 +1,60 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero .background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Logo in center */
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-container img {
+  max-width: 40vw;
+  height: auto;
+}
+
+/* Footer with icons */
+footer {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.icons img {
+  width: 60px;
+  height: auto;
+}
