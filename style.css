@@ -97,6 +97,23 @@ a:hover {
 .logo-container img {
   max-width: 30vw;
   height: auto;
+  opacity: 0;
+  animation: logoEntry 1.6s ease-out 0.4s forwards;
+}
+
+@keyframes logoEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.88);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Footer with icons */
@@ -122,6 +139,9 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(16px) scale(0.95);
+  animation: iconEntry 0.8s ease-out forwards;
 }
 
 .icons img {
@@ -129,6 +149,45 @@ footer {
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+@keyframes iconEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.icons > *:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.icons > *:nth-child(2) {
+  animation-delay: 0.52s;
+}
+
+.icons > *:nth-child(3) {
+  animation-delay: 0.64s;
+}
+
+.icons > *:nth-child(4) {
+  animation-delay: 0.76s;
+}
+
+.icons > *:nth-child(5) {
+  animation-delay: 0.88s;
+}
+
+.icons > *:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.icons > *:nth-child(7) {
+  animation-delay: 1.12s;
 }
 
 /* Notion-style content pages */
