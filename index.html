@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binary Battalion 7028</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="images/7028-hero.jpg" as="image">
+  <link rel="preload" href="images/7028-logo.png" as="image">
 </head>
 <body class="home">
   <nav class="top-nav">
@@ -52,5 +54,31 @@
       </a>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body;
+      if (!body.classList.contains('home')) {
+        return;
+      }
+
+      const images = Array.from(document.querySelectorAll('.hero img, footer img'));
+
+      const whenImageReady = (img) => {
+        if (img.complete && img.naturalWidth !== 0) {
+          return Promise.resolve();
+        }
+
+        return new Promise((resolve) => {
+          const finalize = () => resolve();
+          img.addEventListener('load', finalize, { once: true });
+          img.addEventListener('error', finalize, { once: true });
+        });
+      };
+
+      Promise.all(images.map(whenImageReady)).then(() => {
+        requestAnimationFrame(() => body.classList.add('animations-ready'));
+      });
+    });
+  </script>
 </body>
 </html>

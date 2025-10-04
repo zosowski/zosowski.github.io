@@ -84,6 +84,8 @@ a:hover {
   object-fit: cover;
   object-position: top;
   z-index: 0;
+  opacity: 1;
+  transition: opacity 0.6s ease;
 }
 
 /* Logo in center */
@@ -189,6 +191,16 @@ footer {
 
 .icons > *:nth-child(7) {
   animation-delay: 1.12s;
+}
+
+.home:not(.animations-ready) .hero .background {
+  opacity: 0;
+}
+
+.home:not(.animations-ready) .logo-container img,
+.home:not(.animations-ready) .icons a,
+.home:not(.animations-ready) .icons .icon-wrapper {
+  animation-play-state: paused;
 }
 
 /* Notion-style content pages */
