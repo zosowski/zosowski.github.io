@@ -101,7 +101,9 @@ a:hover {
   max-width: 30vw;
   height: auto;
   opacity: 0;
+  transform: translateY(32px) scale(0.88);
   animation: logoEntry 1.6s ease-out 0.4s forwards;
+  animation-fill-mode: both;
 }
 
 @keyframes logoEntry {
