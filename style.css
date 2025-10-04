@@ -256,6 +256,16 @@ body.notion {
   margin-bottom: 16px;
 }
 
+.robot-photo {
+  flex: 0 0 280px;
+  width: min(280px, 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
 .robot-summary {
   font-size: 1rem;
   line-height: 1.6;
