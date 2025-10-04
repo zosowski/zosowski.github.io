@@ -39,6 +39,7 @@ a:hover {
 
 .nav-links {
   display: flex;
+  justify-content: center;
   gap: 28px;
   padding: 18px 36px;
   align-items: center;
