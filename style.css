@@ -143,13 +143,48 @@ a:hover {
   }
 }
 
-/* Footer with icons */
-footer {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
+/* Footer */
+.site-footer {
+  margin-top: clamp(72px, 12vw, 128px);
+  padding: 48px 24px;
+  background: linear-gradient(180deg, rgba(10, 14, 24, 0.92), rgba(6, 9, 16, 0.95));
+  border-top: 1px solid rgba(143, 188, 255, 0.14);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer-meta {
+  display: grid;
+  gap: 8px;
+  color: rgba(219, 228, 255, 0.92);
+}
+
+.footer-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(166, 187, 226, 0.82);
+}
+
+.footer-icons {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .icons {
@@ -217,6 +252,31 @@ footer {
   animation-delay: 1.12s;
 }
 
+.home .site-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  z-index: 2;
+}
+
+.home .footer-inner {
+  justify-content: center;
+  gap: 40px;
+}
+
+.home .footer-meta {
+  display: none;
+}
+
+.home .footer-icons {
+  flex: unset;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding-top: 64px;
@@ -232,7 +292,7 @@ footer {
     max-width: calc(100vw - 48px);
   }
 
-  footer {
+  .home .site-footer {
     bottom: 20px;
   }
 
@@ -245,6 +305,21 @@ footer {
   .icons .icon-wrapper {
     width: clamp(40px, 12vw, 56px);
     height: clamp(40px, 12vw, 56px);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-meta {
+    justify-items: center;
+  }
+
+  .footer-icons {
+    width: 100%;
   }
 }
 

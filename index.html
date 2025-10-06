@@ -8,17 +8,10 @@
   <link rel="icon" href="/images/favicon.webp" type="image/webp">
   <link rel="preload" href="images/7028-hero.jpg" as="image">
   <link rel="preload" href="images/7028-logo.png" as="image">
+  <script src="/scripts/include.js" defer></script>
 </head>
 <body class="home">
-  <nav class="top-nav">
-    <div class="nav-links">
-      <a href="/sponsors/">Sponsors</a>
-      <a href="/robots/">Robots</a>
-      <a href="/handbook/">Handbook</a>
-      <a href="/join/">Join</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </nav>
+  <div data-include="/partials/header.html"></div>
   <!-- Background team photo -->
   <div class="hero">
     <img src="images/7028-hero.jpg" alt="Team Photo" class="background">
@@ -29,34 +22,9 @@
     </div>
   </div>
 
-  <!-- Footer with icons -->
-  <footer>
-    <div class="icons">
-      <a href="https://www.instagram.com/7028_robotics/" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-instagram.png" alt="Instagram">
-      </a>
-      <a href="https://www.youtube.com/@7028robotics" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-youtube.png" alt="YouTube">
-      </a>
-      <a href="https://www.facebook.com/STMARobotics/" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-facebook.png" alt="Facebook">
-      </a>
-      <a href="https://www.stmarobotics.org/" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-robotics.png" alt="Robotics Logo">
-      </a>
-      <a href="https://www.thebluealliance.com/team/7028" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-bluealliance.png" alt="Blue Alliance Icon">
-      </a>
-      <span class="icon-wrapper">
-        <img src="images/icon-onshape.png" alt="Onshape Icon">
-      </span>
-      <a href="https://github.com/stmarobotics" target="_blank" rel="noopener noreferrer">
-        <img src="images/icon-github.png" alt="GitHub">
-      </a>
-    </div>
-  </footer>
+  <div data-include="/partials/footer.html"></div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    const initializeHomePage = () => {
       const body = document.body;
       if (!body.classList.contains('home')) {
         return;
@@ -81,11 +49,7 @@
       let konamiIndex = 0;
 
       const normalizeKey = (key) => {
-        if (key.startsWith('Arrow')) {
-          return key;
-        }
-
-        if (key === 'Enter') {
+        if (key.startsWith('Arrow') || key === 'Enter') {
           return key;
         }
 
@@ -140,7 +104,13 @@
       Promise.all(images.map(whenImageReady)).then(() => {
         requestAnimationFrame(() => body.classList.add('animations-ready'));
       });
-    });
+    };
+
+    if (window.__includesLoaded) {
+      initializeHomePage();
+    } else {
+      document.addEventListener('includesLoaded', initializeHomePage, { once: true });
+    }
   </script>
 </body>
 </html>
