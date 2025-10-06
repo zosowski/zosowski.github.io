@@ -98,7 +98,7 @@ a:hover {
 }
 
 .logo-container img {
-  max-width: 30vw;
+  width: clamp(180px, 30vw, 420px);
   height: auto;
   opacity: 0;
   transform: translateY(32px) scale(0.88);
@@ -193,6 +193,37 @@ footer {
 
 .icons > *:nth-child(7) {
   animation-delay: 1.12s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 64px;
+  }
+
+  .logo-container {
+    width: auto;
+    padding: 0;
+  }
+
+  .logo-container img {
+    width: clamp(220px, 60vw, 420px);
+    max-width: calc(100vw - 48px);
+  }
+
+  footer {
+    bottom: 20px;
+  }
+
+  .icons {
+    gap: clamp(16px, 6vw, 28px);
+    padding: 0 24px;
+  }
+
+  .icons a,
+  .icons .icon-wrapper {
+    width: clamp(40px, 12vw, 56px);
+    height: clamp(40px, 12vw, 56px);
+  }
 }
 
 .home:not(.animations-ready) .hero .background {
