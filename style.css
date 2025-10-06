@@ -458,6 +458,10 @@ body.notion {
   color: #8f9db7;
 }
 
+.match-table .group-heading {
+  text-align: center;
+}
+
 .match-table tbody tr td:first-child {
   font-weight: 600;
   color: #b7c4df;
@@ -467,6 +471,12 @@ body.notion {
   font-family: 'Fira Code', 'Roboto Mono', monospace;
   font-size: 0.9rem;
   word-break: break-word;
+}
+
+.match-table .match-score {
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .event-block + .event-block {
