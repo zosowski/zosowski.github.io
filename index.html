@@ -63,6 +63,67 @@
 
       const images = Array.from(document.querySelectorAll('.hero img, footer img'));
 
+      const logoContainer = document.querySelector('.logo-container');
+      const konamiSequence = [
+        'ArrowUp',
+        'ArrowUp',
+        'ArrowDown',
+        'ArrowDown',
+        'ArrowLeft',
+        'ArrowRight',
+        'ArrowLeft',
+        'ArrowRight',
+        'b',
+        'a',
+        'Enter'
+      ];
+      let konamiIndex = 0;
+
+      const normalizeKey = (key) => {
+        if (key.startsWith('Arrow')) {
+          return key;
+        }
+
+        if (key === 'Enter') {
+          return key;
+        }
+
+        return key.length === 1 ? key.toLowerCase() : key;
+      };
+
+      const triggerLogoSpin = () => {
+        if (!logoContainer || logoContainer.classList.contains('konami-spinning')) {
+          return;
+        }
+
+        logoContainer.classList.add('konami-spinning');
+        logoContainer.addEventListener(
+          'animationend',
+          () => {
+            logoContainer.classList.remove('konami-spinning');
+          },
+          { once: true }
+        );
+      };
+
+      document.addEventListener('keydown', (event) => {
+        const normalizedKey = normalizeKey(event.key);
+        const expectedKey = konamiSequence[konamiIndex];
+
+        if (normalizedKey === expectedKey) {
+          konamiIndex += 1;
+
+          if (konamiIndex === konamiSequence.length) {
+            triggerLogoSpin();
+            konamiIndex = 0;
+          }
+
+          return;
+        }
+
+        konamiIndex = normalizedKey === konamiSequence[0] ? 1 : 0;
+      });
+
       const whenImageReady = (img) => {
         if (img.complete && img.naturalWidth !== 0) {
           return Promise.resolve();

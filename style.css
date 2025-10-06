@@ -97,6 +97,10 @@ a:hover {
   z-index: 2;
 }
 
+.logo-container.konami-spinning {
+  animation: konamiSpin 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
 .logo-container img {
   width: clamp(180px, 30vw, 420px);
   height: auto;
@@ -104,6 +108,24 @@ a:hover {
   transform: translateY(32px) scale(0.88);
   animation: logoEntry 1.6s ease-out 0.4s forwards;
   animation-fill-mode: both;
+}
+
+@keyframes konamiSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate(-50%, -50%) rotate(-25deg) scale(1.05);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.12);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(540deg) scale(0.92);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
 }
 
 @keyframes logoEntry {
