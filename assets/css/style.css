@@ -546,12 +546,12 @@ main::after {
 }
 
 .course-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
   margin-top: 1.5rem;
-  padding: 1.1rem 1.4rem;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(0, 20, 137, 0.1);
   border-radius: 0.9rem;
   box-shadow: 0 8px 18px rgba(6, 16, 64, 0.08);
@@ -559,25 +559,30 @@ main::after {
 
 .course-meta dl {
   margin: 0;
-  display: grid;
-  gap: 0.35rem;
   padding: 0;
+  display: contents;
 }
 
 .course-meta dt {
-  font-weight: 600;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin: 0;
+  display: none;
 }
 
 .course-meta dd {
   margin: 0;
+  display: block;
+  width: 100%;
+  padding: 0.55rem 0.85rem;
   font-size: 0.98rem;
+  line-height: 1.45;
   color: var(--text-color);
   font-weight: 600;
+  background: rgba(0, 20, 137, 0.06);
+  border-radius: 0.65rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.course-meta dd + dd {
+  margin-top: 0.15rem;
 }
 
 .back-link {
@@ -695,10 +700,6 @@ main::after {
 
 @media (max-width: 960px) {
   .course-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .course-meta {
     grid-template-columns: 1fr;
   }
 
