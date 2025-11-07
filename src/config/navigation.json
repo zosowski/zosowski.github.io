@@ -1,0 +1,9 @@
+[
+  { "key": "teachers", "label": "Teachers", "href": "teachers.html" },
+  { "key": "metals", "label": "Metals", "href": "metals.html" },
+  { "key": "woods", "label": "Woods", "href": "woods.html" },
+  { "key": "engineering", "label": "Engineering", "href": "engineering.html" },
+  { "key": "computer-science", "label": "Computer Science", "href": "computer-science.html" },
+  { "key": "construction", "label": "Construction", "href": "construction.html" },
+  { "key": "other-classes", "label": "Other Classes", "href": "other-classes.html" }
+]

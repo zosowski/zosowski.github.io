@@ -1,0 +1,10 @@
+{
+  "name": "stma-technology-education-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site for STMA Technology & Engineering Education with partial-based build tooling.",
+  "scripts": {
+    "build": "node build.js",
+    "generate:pages": "node scripts/createPagesFromExisting.js"
+  }
+}
