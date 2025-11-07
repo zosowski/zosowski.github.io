@@ -547,37 +547,37 @@ main::after {
 
 .course-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 20, 137, 0.1);
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 18px rgba(6, 16, 64, 0.08);
 }
 
 .course-meta dl {
   margin: 0;
-  background: linear-gradient(135deg, rgba(0, 20, 137, 0.06), rgba(0, 48, 160, 0.08));
-  border: 1px solid rgba(0, 20, 137, 0.12);
-  border-radius: 0.95rem;
-  padding: 1.35rem 1.6rem;
-  box-shadow: 0 12px 24px rgba(6, 16, 64, 0.12);
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
 }
 
 .course-meta dt {
-  font-weight: 700;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--brand-primary);
-}
-
-.course-meta dt:first-of-type {
-  margin-top: 0;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 .course-meta dd {
-  margin: 0.45rem 0 0;
-  font-size: 1rem;
-  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .back-link {
