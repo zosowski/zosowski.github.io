@@ -382,6 +382,78 @@ main::after {
   z-index: 1;
 }
 
+.content-card ul.teacher-list {
+  padding-left: 0;
+}
+
+.teacher-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.teacher-card {
+  display: grid;
+  grid-template-columns: minmax(120px, 160px) 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(0, 48, 160, 0.08), rgba(255, 212, 0, 0.08));
+  border: 1px solid rgba(0, 20, 137, 0.12);
+  box-shadow: 0 16px 32px rgba(6, 16, 64, 0.12);
+}
+
+.teacher-photo {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(0, 20, 137, 0.28), rgba(255, 212, 0, 0.22)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45) 8px, rgba(255, 255, 255, 0.2) 8px, rgba(255, 255, 255, 0.2) 16px);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(6, 16, 64, 0.18);
+  position: relative;
+}
+
+.teacher-photo::after {
+  content: "Photo";
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.teacher-details h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  color: var(--brand-primary);
+}
+
+.teacher-details p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+@media (max-width: 680px) {
+  .teacher-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .teacher-photo {
+    margin: 0 auto;
+  }
+}
+
 .highlight {
   color: var(--brand-secondary);
   font-weight: 600;
