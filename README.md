@@ -4,16 +4,22 @@ This repository contains a static website for the STMA Technology &amp; Engineer
 
 ## Structure
 
-- `index.html` &mdash; Landing page introducing the department.
-- `teachers.html`, `metals.html`, `woods.html`, `engineering.html`, `computer-science.html`, `construction.html`, `other-classes.html` &mdash; Program-specific content pages that share the same layout shell.
+- `src/layouts` &mdash; Base HTML shells used during the build step.
+- `src/partials` &mdash; Shared fragments such as the `<head>` metadata and global header.
+- `src/pages` &mdash; Source content for each page, including front matter that sets navigation state.
+- `src/config/navigation.json` &mdash; Central definition of the primary navigation links.
 - `assets/css/style.css` &mdash; Global styles defining the responsive layout, navigation, and typography.
+- `build.js` &mdash; Lightweight build script that assembles source pages with the shared partials.
 
 ## Development
 
-Open any of the HTML files in a browser to preview the site locally. All pages share the same navigation and automatically highlight the active section.
+1. Edit content inside `src/pages/*.html`. Each file begins with optional front matter where you can specify the active navigation key or override the page title.
+2. Run `npm run build` to regenerate the distributable HTML files in the repository root.
+3. Open the generated HTML files in a browser to preview the site locally. All pages share the same navigation and automatically highlight the active section.
 
 ## Extending the Site
 
-1. Duplicate one of the existing HTML pages when adding a new section.
-2. Update the navigation list across all pages to include the new link.
-3. Add any additional styling to `assets/css/style.css` to keep presentation consistent.
+1. Create a new file in `src/pages` that contains the page content. Include `navKey: <section>` in the front matter if the page should highlight a navigation entry.
+2. Add the new page to `src/config/navigation.json` when the navigation menu itself needs to change.
+3. Run `npm run build` to update the generated HTML files.
+4. Add any additional styling to `assets/css/style.css` to keep presentation consistent.
