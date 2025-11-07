@@ -1,12 +1,14 @@
-# STMA Technology &amp; Engineering Education Website
+# STMA Technology & Engineering Education Website
 
-This repository contains a static website for the STMA Technology &amp; Engineering Education department. The site features a shared header, persistent navigation tree, and dedicated pages for each program area.
+This repository contains a static website for the STMA Technology & Engineering Education department. The site features a shared header, persistent navigation tree, and dedicated pages for each program area.
 
 ## Structure
 
-- `index.html` &mdash; Landing page introducing the department.
-- `teachers.html`, `metals.html`, `woods.html`, `engineering.html`, `computer-science.html`, `construction.html`, `other-classes.html` &mdash; Program-specific content pages that share the same layout shell.
-- `assets/css/style.css` &mdash; Global styles defining the responsive layout, navigation, and typography.
+- `index.html` — Landing page introducing the department.
+- `pages/teachers/index.html` — Faculty directory and support resources.
+- `pages/<program>/index.html` — Overview page for each program area (`metals`, `woods`, `engineering`, `computer-science`, `construction`, `other`).
+- `pages/<program>/*.html` — Course detail pages grouped alongside their program overview.
+- `assets/css/style.css` — Global styles defining the responsive layout, navigation, and typography.
 
 ## Development
 
@@ -14,6 +16,6 @@ Open any of the HTML files in a browser to preview the site locally. All pages s
 
 ## Extending the Site
 
-1. Duplicate one of the existing HTML pages when adding a new section.
-2. Update the navigation list across all pages to include the new link.
+1. Duplicate one of the existing program folders or course pages when adding new content.
+2. Update the navigation list in the shared HTML template to include the new link.
 3. Add any additional styling to `assets/css/style.css` to keep presentation consistent.
